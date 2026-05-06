@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding</title>
+    <link rel="stylesheet" href="../Web-site-Kudinov/css/wedding-page-style.css">
+    <link rel="icon" type="image/x-icon" href="../3.png">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari:wght@400&family=Judson:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="die">
+        <div class="logo">
+            <img src="../Web-site-Kudinov/images/3.png" alt="">
+        </div>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#" class="portfolio-link">Portfolio</a>
+                    <div class="portfolio-subtext hidden" class="portfolio-subtext">
+                        <a class="ko" href="wedding-video.html">Videos</a>
+                        <a class="ko" href="wedding-photo.html">Photos</a>
+                    </div>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo"><img src="../Web-site-Kudinov/images/3.png" alt=""></div>
+        <nav class="pip">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li class="menu-item">
+                    <div>Portfolio</div>
+                     <ul class="submenu">
+                        <li><a href="wedding-video.html">Videos</a></li>
+                        <li><a href="wedding-photo.html">Photos</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul> 
+        </nav>
+    </header>
+    <h2 class="gallery-title">Wedding videos</h2>
+    <div class="video-selector">
+        <button onclick="showVideo(0)">Vlad & Anna</button>
+        <button onclick="showVideo(1)">Vasyl & Inna</button>
+        <button onclick="showVideo(2)">Aleksandr & Anastasia</button>
+        <button onclick="showVideo(3)">Ruslan & Natalia</button>
+    </div>
+    
+    <div class="video-wrapper">
+        
+        <div class="video-frame" id="video1">
+            <iframe src="https://www.youtube.com/embed/peVDzmU4Yas?si=ymLcWV_TC5hDpA6p" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame" id="video0">
+            <iframe src="https://www.youtube.com/embed/o1bm5zCdmi4?si=9nmoFqmpztltcx6m"  frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame" id="video2">
+            <iframe src="https://www.youtube.com/embed/pRodnMPCRjo?si=ZLr57t4j9K1mai9c" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-frame" id="video3">
+            <iframe src="https://www.youtube.com/embed/Dvd7avohkEM?si=LGB77gRU-JxsZal_" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        
+        
+    </div>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ok_photography_us/">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:your-email@example.com">
+                <i class="fas fa-paper-plane"></i>
+            </a>
+            <a href="https://wa.me/1234567890" > 
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="line4"></div>
+        <p class="bold">OK Photography US</p>
+        <p>Creating vivid memories of the most important events</p>
+        <p>Charlotte, North Carolina, USA</p>
+    </footer>
+    <script>document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+
+    const nav = document.querySelector('nav');
+    const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+
+    
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 50 && currentScrollY > lastScrollY) {
+            header.classList.add('scrolled');
+        } 
+        
+        else if (currentScrollY < 50 || currentScrollY < lastScrollY) {
+            header.classList.remove('scrolled');
+        }
+
+ 
+        lastScrollY = currentScrollY;
+    });
+    window.addEventListener("scroll", function () {
+const video = document.querySelector(".image-hero");
+let scrollPosition = window.scrollY;
+video.style.transform = `translate(-50%, ${scrollPosition * 0.5}px)`;
+});
+window.addEventListener('scroll', function() {
+const header = document.querySelector('header');
+if (window.scrollY > 100) {  
+    header.classList.add('scrolled');  
+} else {
+    header.classList.remove('scrolled');  
+}
+});
+
+
+
+
+
+const imageElement = document.getElementById("gallery-image");
+const images = ["8.jpg", "4.webp", "4.jpg", "5.jpg"];
+let currentIndex = 0;
+
+
+</script>
+        
+</body>
+<script >
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+
+    burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    menu.classList.toggle("open");
+        });
+
+  </script>
+  <script>
+    function showVideo(index) {
+        const videos = document.querySelectorAll('.video-frame');
+        const buttons = document.querySelectorAll('.video-selector button');
+
+        videos.forEach((vid, i) => {
+            vid.style.display = (i === index) ? 'block' : 'none';
+        });
+
+        buttons.forEach((btn, i) => {
+            if (i === index) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    // Показываем первое видео по умолчанию
+    window.addEventListener('DOMContentLoaded', () => {
+        showVideo(0);
+    });
+</script>
+<script>
+    document.querySelectorAll('.portfolio-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+
+
+
+

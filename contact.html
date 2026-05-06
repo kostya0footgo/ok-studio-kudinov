@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../Web-site-Kudinov/css/main-page.css">
+    <link rel="icon" type="image/x-icon" href="../3.png">
+    <link rel="stylesheet" href="../Web-site-Kudinov/css/contact-page-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari:wght@400&family=Judson:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    <div class="justimage">
+        <div class="gallery-container">
+        </div>
+    </div>
+
+
+
+    <section class="text">
+        <h2>OK Photography US</h2>
+        <p>OK Photography US: Timeless Elegance & Personalized Storytelling At OK Photography US, we capture more than just moments—we preserve emotions and create lasting art. With 15+ years of experience, we bring a refined European touch, blending elegance, sophistication, and authenticity. Why Choose OK Photography US? ✔️ European Aesthetic – Soft, natural light and timeless composition. ✔️ Professional Team – Full-service photography, videography, and album design. ✔️ Personalized Approach – Your story, your vision, beautifully captured. With OK Photography US, you invest in memories that last forever. Let’s create something extraordinary!</p>
+    </section>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="die">
+        <div class="logo">
+            <img src="../Web-site-Kudinov/images/3.png" alt="">
+        </div>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#" class="portfolio-link">Portfolio</a>
+                    <div class="portfolio-subtext hidden" class="portfolio-subtext">
+                        <a class="ko" href="wedding-video.html">Videos</a>
+                        <a class="ko" href="wedding-photo.html">Photos</a>
+                    </div>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo"><img src="../Web-site-Kudinov/images/3.png" alt=""></div>
+        <nav class="pip">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li class="menu-item">
+                    <div>Portfolio</div>
+                     <ul class="submenu">
+                        <li><a href="wedding-video.html">Videos</a></li>
+                        <li><a href="wedding-photo.html">Photos</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    
+    <main>
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="589af67c-ae64-4d78-9bba-80c6e7f6ac67">
+        
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required autocomplete="off">
+        
+            <label for="contact">Email</label>
+            <input type="text" id="contact" name="contact" required autocomplete="off">
+
+
+            <label for="contact">Phone Number</label>
+            <input type="text" id="contact" name="contact" required autocomplete="off">
+            
+        
+            <label for="event-type">Type of Event*</label>
+            <select id="event-type" name="event-type" required>
+                <option value=""></option>
+                <option value="wedding">Wedding</option>
+            </select>
+        
+            <input type="text" id="event-type-other" name="event-type-other" placeholder="If other, please specify..." autocomplete="off">
+        
+            <label for="hours">Estimated Hours of Coverage*</label>
+            <input type="text" id="hours" name="hours" required autocomplete="off">
+        
+            <label for="services">What services would you like to book?*</label>
+            <select id="services" name="services" required>
+                <option value=""></option>
+                <option value="photo">Photo Only</option>
+                <option value="video">Video Only</option>
+                <option value="photo-video">Photo + Video</option>
+            </select>
+        
+            <label for="photographers">How many photographers do you need?</label>
+            <select id="photographers" name="photographers" required>
+                <option value=""></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        
+            <label for="videographers">How many videographers do you need?</label>
+            <select id="videographers" name="videographers" required>
+                <option value=""></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        
+            <label for="date">Date of Event</label>
+            <input type="date" id="date" name="date" required>
+        
+            <label for="venue">Location and City</label>
+            <input type="text" id="venue" name="venue" autocomplete="off">
+        
+            <label for="message">Additional Information or Questions</label>
+            <textarea id="message" name="message" autocomplete="off"></textarea>
+        
+            <button type="submit">SEND</button>
+        </form>
+        
+    </main>
+</html>
+<footer>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/ok_photography_us/">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:your-email@example.com">
+            <i class="fas fa-paper-plane"></i>
+        </a>
+        <a href="https://wa.me/1234567890" > 
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <div class="line4"></div>
+    <p class="bold">OK Photography US</p>
+    <p>Creating vivid memories of the most important events</p>
+    <p>Charlotte, North Carolina, USA</p>
+</footer>
+
+<script>
+     window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50 && currentScrollY > lastScrollY) {
+                header.classList.add('scrolled');
+            } 
+            
+            else if (currentScrollY < 50 || currentScrollY < lastScrollY) {
+                header.classList.remove('scrolled');
+            }
+
+           
+            lastScrollY = currentScrollY;
+        });
+        window.addEventListener("scroll", function () {
+    const video = document.querySelector(".image-hero");
+    let scrollPosition = window.scrollY;
+    video.style.transform = `translate(-50%, ${scrollPosition * 0.5}px)`;
+});
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 800) {  
+        header.classList.add('scrolled');  
+    } else {
+        header.classList.remove('scrolled');  
+    }
+});
+
+</script>
+<script >
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+
+    burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    menu.classList.toggle("open");
+        });
+
+  </script>
+
+<script>
+    document.querySelectorAll('.portfolio-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const submenu = this.nextElementSibling;
+        submenu.classList.toggle('hidden');
+      });
+    });
+  </script>

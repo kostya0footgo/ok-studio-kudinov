@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo and Video Studio</title>
+    <link rel="stylesheet" href="../Web-site-Kudinov/css/main-page.css">
+    <link rel="icon" type="image/x-icon" href="../Web-site-Kudinov/images/3.png">
+    <link rel="stylesheet" href="../Web-site-Kudinov/css/contact-form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jomolhari:wght@400&family=Judson:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head> 
+<body>
+   <div class="die">
+        <div class="logo">
+            <img src="../Web-site-Kudinov/images/3.png" alt="">
+        </div>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#" class="portfolio-link">Portfolio</a>
+                    <div class="portfolio-subtext hidden" class="portfolio-subtext">
+                        <a class="ko" href="wedding-video.html">Videos</a>
+                        <a class="ko" href="wedding-photo.html">Photos</a>
+                    </div>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo"><img src="../Web-site-Kudinov/images/3.png" alt=""></div>
+        <nav class="pip">
+            <ul>
+                <li><a href=""> Home</a></li>
+                <li class="menu-item">
+                    <div>Portfolio</div>
+                     <ul class="submenu">
+                        <li><a href="wedding-video.html">Videos</a></li>
+                        <li><a href="wedding-photo.html">Photos</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="../Web-site-Kudinov/images/102.jpg" alt="Hero Image" class="image-hero">
+        <img src="../Web-site-Kudinov/images/102.jpg" alt="Hero Image" class="hero-image">
+    </div>
+
+    <section class="hero-content" style="background-color: #000; color: #fff; padding: 60px 0;">
+        <div class="hero-wrapper" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-around;">
+            <div class="hero-content new-hero">
+                <div class="hero-text">
+                    <h1 class="hero-title">Luxury Wedding Photography & Cinematic Films<br> </h1>
+                    <p>We capture real emotions, timeless moments, and unforgettable wedding stories.</p>
+                    <p>Based in Charlotte, NC. Serving weddings across the USA.</p> 
+                </div>
+
+                <div class="hero-squares">
+                    <div class="square"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="category" id="image-category">
+          <img id="displayed-image" class="ip" src="../Web-site-Kudinov/images/15.jpg" alt="Portrait">
+          <h3 id="displayed-text"><a id="displayed-link" href="../Web-site-Kudinov/images/15.jpg"></a></h3>
+        </div>
+      </section>
+
+      <style>
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px;
+            background-color: rgb(0, 0, 0);
+        }
+    
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+    
+        .category h3 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: rgba(152, 152, 152, 0.7);
+            font-weight: normal;
+            transition: 0.6s;
+        }
+    
+        .category h3:hover {
+            color: #fff;
+            transition: 0.3s;
+        }
+    
+        .category img {
+            width: 1150px;
+            border-radius: 3px;
+            transition: 0.6s ease-in-out;
+            height: 750px;
+            object-fit: cover;
+            max-width: 100%;
+        }
+    
+        @media (max-width: 768px) {
+            .gallery {
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+                margin-top: 0px;
+            }
+    
+            .category img {
+                width: 100%;
+                height: auto;
+            }
+    
+            .category h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+<!-- Автоматичное переключение картинок -->
+<script>
+    const imagess = [
+      { src: "../Web-site-Kudinov/images/15.jpg", text: "Weeding", href: "wedding.html" },
+      { src: "../Web-site-Kudinov/images/1.jpg", text: "Weeding", href: "wedding.html" },
+      { src: "../Web-site-Kudinov/images/9.jpg", text: "Weeding", href: "wedding.html" },
+      { src: "../Web-site-Kudinov/images/92.jpg", text: "Weeding", href: "wedding.html" },
+    ];
+  
+    let index = 0;
+    let intervalId = null;
+  
+    const img = document.getElementById("displayed-image");
+    const text = document.getElementById("displayed-text");
+    const link = document.getElementById("displayed-link");
+    const gallery = document.querySelector(".gallery");
+  
+    function updateImage() {
+      img.style.opacity = "0";
+      text.style.opacity = "0";
+  
+      setTimeout(() => {
+        img.src = imagess[index].src;
+        link.href = imagess[index].href;
+        link.textContent = imagess[index].text;
+  
+        setTimeout(() => {
+          img.style.opacity = "1";
+          text.style.opacity = "1";
+        }, 100);
+      }, 1000);
+    }
+  
+    function startGallery() {
+      clearInterval(intervalId);
+      index = 0;
+      updateImage();
+      intervalId = setInterval(() => {
+        index = (index + 1) % imagess.length;
+        updateImage();
+      }, 3000);
+    }
+  
+    // Запускаем при попадании галереи в видимую область
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startGallery();
+        }
+      });
+    }, {
+      threshold: 0.5 // Запускать, когда хотя бы 50% галереи видно
+    });
+  
+    observer.observe(gallery);
+  
+    // Клик только по картинке или ссылке
+    document.getElementById("image-category").addEventListener("click", (e) => {
+      if (e.target.id === "displayed-image" || e.target.id === "displayed-link") {
+        window.location.href = imagess[index].href;
+      }
+    });
+  </script>
+    
+<a 
+  href="https://www.zola.com/wedding-vendors/wedding-photographers/ok-studio"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="zola-card"
+>
+  <div class="zola-card-content">
+    <span class="zola-badge">Featured on</span>
+    <h3>Zola Weddings</h3>
+    <p>View OK Studio on Zola</p>
+  </div>
+</a>
+
+
+<!-- Отзывы -->
+<section class="testimonials">
+        <h2>WHAT MY CLIENTS SAY</h2>
+        <div class="reviews-container">
+            <div class="review">
+                <img src="../Web-site-Kudinov/images/452.jpg" alt="Elena & Bart">
+                <div class="review-text">
+                    <h3>Roma & Svetlana</h3>
+                    <p> Oleg and the OK Photography US team — you are simply magicians.
+                        We didn't even notice how the shooting went: everything was easy, natural, without fuss. And in the end — photos that you want to look at again and again.
+                        
+                        Each frame conveys the atmosphere, emotions, ourselves...
+                        You saved not just a moment — you saved a feeling.📸 
+                     </p>
+                </div>
+            </div>
+            
+            <div class="review">
+                <img src="../Web-site-Kudinov/images/35.jpg" alt="Yahya & Fatma">
+                <div class="review-text">
+                    <h3>Reut & Hagay</h3>
+                    <p>We couldn't be happier with our experience with Oleg and the entire OK Photography US team. From the very first meeting to the final photo delivery, everything felt so smooth, thoughtful, and personal.
+                        On our wedding day, Oleg was more than just a photographer — he was calm, supportive, and somehow always in the right place at the right time without ever being intrusive.
+                        </p>
+                </div>
+            </div>
+        
+            <div class="review">
+                <img src="../Web-site-Kudinov/images/10.jpg" alt="Marina & Radik">
+                <div class="review-text">
+                    <h3>Marina</h3>
+                    <p>Oleg is simply amazing! From the beginning through to the end he offered endless advice and guidance. His experience and professionalism allows you to relax and have the best day of your lives.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+<!-- Контакт форма -->
+<div class="line4"></div>
+
+<main1>
+  <p class="text-contact">Contact Us</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+    <input type="hidden" name="access_key" value="589af67c-ae64-4d78-9bba-80c6e7f6ac67">
+
+    <div class="form-grid">
+      <!-- Row 1 -->
+      <div class="field">
+        <label for="full-name">Full Name*</label>
+        <input type="text" id="full-name" name="full-name" required autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="contact">Email</label>
+        <input type="text" id="contact" name="contact" required autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="contact">Phone</label>
+        <input type="text" id="contact" name="contact" required autocomplete="off">
+      </div>
+
+      <!-- Row 2 -->
+      <div class="field">
+        <label for="event-type">Type of Event*</label>
+        <select id="event-type" name="event-type" required>
+          <option value="Wedding" selected>Wedding</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="date">Wedding Date*</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="field">
+        <label for="services">Services*</label>
+        <select id="services" name="services" required>
+          <option value=""></option>
+          <option value="Photo Only">Photo Only</option>
+          <option value="Video Only">Video Only</option>
+          <option value="Photo + Video">Photo + Video</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="hours">Estimated Hours*</label>
+        <input type="text" id="hours" name="hours" required autocomplete="off" placeholder="e.g., 8">
+      </div>
+
+      <!-- Row 4 (optional / secondary) -->
+      <div class="field">
+        <label for="venue">City / Venue (optional)</label>
+        <input type="text" id="venue" name="venue" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="team">Team Size (optional)</label>
+        <select id="team" name="team">
+          <option value=""></option>
+          <option value="1 Photo">1 Photographer</option>
+          <option value="2 Photo">2 Photographers</option>
+          <option value="1 Video">1 Videographer</option>
+          <option value="2 Video">2 Videographers</option>
+          <option value="Photo + Video Team">Photo + Video Team</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="message">Additional Info (optional)</label>
+      <textarea id="message" name="message" autocomplete="off" rows="4"></textarea>
+    </div>
+
+    <button type="submit">SEND</button>
+  </form>
+</main1>
+
+     <div class="line4"></div>
+    <section class="faq">
+        <img src="../Web-site-Kudinov/images/11.jpg" alt="Bride">
+        <div class="faq-content">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How many photographers and videographers will be at my wedding?
+                    </span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our standard wedding package includes:
+
+                        1-2 photographers (depending on the scale of the event)
+                        
+                        1-3 videographers for full video coverage
+                        
+                        For larger weddings, we recommend adding a second photographer and videographer to ensure no moment is missed. We will discuss the best option for you during our consultation.
+                        </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you use drones for aerial shots?
+                    </span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer aerial drone photography and videography to capture stunning overhead views of your wedding venue and surroundings. This service is included in select packages or can be added as an extra. Availability depends on weather conditions and venue restrictions.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do we book your services?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>To book OK Photography US Photo-Videography, follow these steps:
+
+                        1. Fill out our inquiry form with your event details.
+                        
+                        
+                        2. We’ll send you a custom proposal based on your needs.
+                        
+                        
+                        3. Once you're happy with the package, we'll send a contract and invoice for a deposit payment to secure your date.
+                        
+                        
+                        4. After booking, we’ll discuss your timeline, shot list, and any special requests.
+                        
+                        
+                        
+                        We recommend booking as early as possible, especially for peak wedding season dates.
+                        </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer engagement sessions?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We highly recommend booking an engagement session before your wedding. It’s a great way to get comfortable in front of the camera, capture beautiful pre-wedding moments, and build a connection with our team before the big day. Engagement sessions can be booked separately or as part of your wedding package.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do we receive our photos and videos?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>All edited photos and videos are delivered via a private online gallery where you can view, download, and share them. Wedding videos are delivered in high-resolution digital format, and we also provide USB drives upon request.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>
+                        What happens if it rains on my wedding day?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We always have a backup plan! If it rains, we:
+
+                        Use covered or indoor locations at your venue.
+                        
+                        Bring professional lighting equipment to ensure great photos and videos in any condition.
+                        
+                        Capture creative rain shots (if you're open to it!).
+                        
+                        
+                        We also discuss contingency plans with you before the wedding to ensure everything runs smoothly.
+                        
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ok_photography_us/">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:your-email@example.com">
+                <i class="fas fa-paper-plane"></i>
+            </a>
+            <a href="https://wa.me/1234567890" > 
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="line4"></div>
+        <p class="bold">OK Photography US</p>
+        <p>Creating vivid memories of the most important events</p>
+        <p>Charlotte, North Carolina, USA</p>
+    </footer>
+    
+
+<script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        const nav = document.querySelector('nav');
+        const header = document.querySelector('header');
+        let lastScrollY = window.scrollY;
+
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50 && currentScrollY > lastScrollY) {
+                header.classList.add('scrolled');
+            } 
+            
+            else if (currentScrollY < 50 || currentScrollY < lastScrollY) {
+                header.classList.remove('scrolled');
+            }
+
+           
+            lastScrollY = currentScrollY;
+        });
+        window.addEventListener("scroll", function () {
+    const video = document.querySelector(".image-hero");
+    let scrollPosition = window.scrollY;
+    video.style.transform = `translate(-50%, ${scrollPosition * 0.5}px)`;
+});
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 800) {  
+        header.classList.add('scrolled');  
+    } else {
+        header.classList.remove('scrolled');  
+    }
+});
+
+
+
+const imageElement = document.getElementById("gallery-image");
+const images = ["Web-site-Kudinov/images/8.jpg", "Web-site-Kudinov/images/4.webp", "Web-site-Kudinov/images/4.jpg", "Web-site-Kudinov/images/5.jpg"];
+let currentIndex = 0;
+
+        const burger = document.getElementById("burger");
+        const menu = document.getElementById("menu");
+    
+        burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        menu.classList.toggle("open");
+            });
+          </script>
+    
+    <script>
+        document.querySelectorAll('.portfolio-link').forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const submenu = this.nextElementSibling;
+            submenu.classList.toggle('hidden');
+          });
+        });
+      </script>
+</body>
+</html>
