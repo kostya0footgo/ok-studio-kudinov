@@ -1,0 +1,154 @@
+/* ===== Premium Contact Form ===== */
+:root{
+  --bg: #000;
+  --text: #fff;
+  --muted: rgba(255,255,255,.65);
+  --line: rgba(255,255,255,.28);
+  --line-strong: rgba(255,255,255,.45);
+}
+
+.contact-form{
+  width: min(920px, 92%);
+  margin: 0 auto;
+  padding: 34px 28px 28px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+}
+
+/* Заголовок над формою */
+.text-contact{
+  font-size: clamp(36px, 4vw, 64px);
+  letter-spacing: .5px;
+  margin: 0 auto 22px;
+  text-align: center;
+  font-family: inherit;
+}
+
+/* Сітка */
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 26px;
+  align-items: start;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Лейбли */
+.contact-form label{
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Поля */
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  background: transparent;
+  color: var(--text);
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 6px 12px 2px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color .25s ease, opacity .25s ease, transform .25s ease;
+}
+
+/* Плейсхолдер */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color: rgba(255,255,255,.35);
+}
+
+/* Focus-стан (важливо!) */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  border-bottom-color: var(--line-strong);
+  transform: translateY(-5px);
+}
+
+/* Select: робимо акуратну "стрілку" */
+.contact-form select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 34px;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.65) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.65) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 55%,
+    calc(100% - 11px) 55%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Textarea: правильна висота + не тягнути ресайзом */
+.contact-form textarea{
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.5;
+  padding-top: 14px;
+}
+
+/* Блок textarea (поза grid) робимо акуратно */
+.contact-form > .field{
+  margin-top: 18px;
+}
+
+/* Кнопка */
+.contact-form button{
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  font-family: inherit;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .5s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.contact-form button:hover{
+  transform: translateY(-2px);
+  background: rgba(25, 130, 160, 0.92);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.contact-form button:active{
+  transform: translateY(0);
+}
+
+/* Мобайл */
+@media (max-width: 768px){
+  .contact-form{
+    padding: 24px 16px 20px;
+    border-radius: 8px;
+  }
+
+  .form-grid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea{
+    font-size: 16px; /* щоб iOS не зумив */
+  }
+}

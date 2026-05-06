@@ -1,0 +1,1544 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+.portfolio-subtext.hidden {
+    display: none;
+  }
+
+
+ header{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* центрируем nav */
+  background-color: rgba(0,0,0,.1);
+  transition: background-color .5s ease;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transform: translateY(5px); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.submenu li {
+    padding: 3px 10px; 
+}
+
+.submenu li a {
+    color: rgb(183, 183, 183,0.6);
+    text-decoration: none;
+    display: block;
+    font-size: 14px; 
+    line-height: 1.2; 
+}
+
+.submenu li a:hover {
+    color: white;
+    transition: 1s;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+.gallery-container {
+    position: relative;
+}
+
+#gallery-image {
+    height: 910px;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.image-darken {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.justimage {
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    background-image: url("../Web-site Kudinov/images/30.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+}
+
+
+
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+.pip {
+    width: 100%;
+    position: absolute;
+    top: -13px;
+    left: 250px;
+    transform: translateY(-50%);
+    animation: moveMenuIn 1s forwards;
+    z-index: 101;
+}
+
+@keyframes moveMenuIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(25%);
+    }
+}
+
+
+
+
+
+header.scrolled {
+    background-color: rgb(0, 0, 0);
+    color: #fff; 
+}
+
+header.scrolled nav ul {
+    display: flex;
+    gap: 10px;
+    margin-left: -570px;
+    transition: 1s;
+}
+
+header.scrolled nav ul li ul{
+    margin-left: -5px;
+}
+
+header .logo{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header.scrolled .logo {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+header nav ul {
+    transition: 1s;
+}
+
+header .logo {
+    transition: 1s;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    transition: 1s ease-in;
+}
+
+.pip {
+    margin-left: 320px;
+}
+
+.logo img {
+    height: 52px;
+    width: 57px;
+    padding-left: 10px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    padding-right: 55px;
+    transition: opacity 1s ease;
+}
+
+nav ul li {
+    position: relative;
+    padding: 12px 0;
+    transition: 1s;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding: 15px 0;
+    transition: opacity 1s ease;
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+
+
+.hero-content.new-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+  }
+  
+
+  .hero-text {
+    max-width: 50%;
+    
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    margin-left: -100px;
+  }
+  
+  .hero-text p {
+    font-size: 14px;
+
+    margin-bottom: 15px;
+    margin-left: -100px;
+  }
+  
+
+  .hero-squares {
+    margin-left: 200px;
+
+  }
+  
+  .square:first-child {
+    width: 450px;
+    height: 550px;
+    background-image: url("../images/per2.jpg");
+    background-size: 470px 700px;
+    margin-left: 100px;
+    background-repeat: no-repeat;
+  }
+  
+  
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px
+}
+
+.image-hero {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: cover;
+}
+
+
+
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    padding: 50px;
+    background-color: rgb(0, 0, 0);
+    gap: 20px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.category h3 a {
+    margin-top: 10px; 
+    font-size: 20px;
+    color: rgb(152, 152, 152,0.3);
+    font-weight: 1;
+    transition: 0.6s;
+    text-decoration: none;
+}
+
+.category h3 a:hover{
+    color: #fff;
+    transition: 0.3s;
+}
+
+.category img {
+    width: 100%;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+
+.reviews-container {
+    display: flex;  
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    margin: auto;
+    text-align: left;
+}
+
+.review {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.review img {
+    width: 270px;
+    height: 270px;
+    border-radius: 4px;
+    display: flex;
+    object-fit: cover;
+    transition: 0.3s;
+   
+}
+
+.review-text {
+    flex: 1;
+}
+
+.review-text h3 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    font-weight: lighter;
+}
+
+.review-text p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.review img:hover{
+    filter: brightness(70%);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.category::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); 
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+
+.category img:hover {
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+
+.testimonials {
+    text-align: center;
+    padding: 50px;
+    background-color: rgb(0, 0, 0);
+}
+
+.question {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.question .answer {
+    display: none;
+}
+
+.second {
+    height: 150px;
+    width: 158px;
+    margin-bottom: -70px;
+}
+
+.con {
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+.title {
+    margin-top: -60px;
+    margin-left: 440px;
+    font-size: 40px;
+}
+
+.ty {
+    margin-right: 600px;
+    font-size: 40px;
+}
+
+.quatr {
+    padding-left: 100px;
+}
+
+.ip {
+    height: 400px;
+}
+
+
+.faq-item {
+    border-bottom: 1px solid white;
+    padding: 15px 0;
+    
+}
+
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: auto;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+}
+.faq-icon {
+    transition: transform 0.6s ease;
+    font-size: 24px;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s; 
+    opacity: 0;
+    color: rgb(255, 255, 255,0.5);
+}
+.faq-item.active .faq-icon {
+    transform: rotate(-45deg);
+}
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+
+
+.faq-content {
+    display: flex;
+    flex-direction: column; 
+    width: 50%;
+}
+
+
+.faq {
+    background-color: rgb(0, 0, 0);
+    padding: 50px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 1800px;
+}
+
+.faq img {
+    width: 40%;
+    border-radius: 5px;
+    height: 700px;
+    transition: 0.5s;
+    margin-left: -60px;
+}
+
+
+.die{
+    display: none;
+}
+
+.faq-item h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+
+.faq img:hover {
+    border-radius: 12px;
+    transition: 0.6s;
+    filter: brightness(70%)
+   
+}
+
+.language {
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.language .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    list-style: none;
+    border-radius: 5px;
+}
+
+.language:hover .submenu {
+    display: block;
+}
+
+
+
+
+footer {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    color: #ffffff;
+    max-height: 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 10%;
+    display: flex;
+    padding-bottom: 10px;
+    z-index: 3;
+}
+
+footer .social-icons {
+    font-size: 15px;
+    
+}
+
+.hero-image{
+    display: none;
+}
+
+footer .social-icons i {
+    cursor: pointer;
+    margin: 10px;
+    padding-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-icons i:hover {
+    transform: scale(1.2);
+}
+
+footer p {
+    margin-bottom: 10px; 
+    font-size: 12px; 
+    
+}
+
+.line4 {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color:white;
+}
+
+  
+
+@media (max-width: 1024px) {
+    header {
+        display: none;
+    }
+}
+
+
+/* Для телефонов */
+@media (max-width: 768px){
+    .image-hero,
+  .hero-image{
+    display: block;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    object-fit: contain !important;   /* ключ: без обрезки */
+    object-position: center;
+    background: #000;                 /* чтобы были "поля" красиво */
+  }
+
+  .hero{
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+    .gallery{
+        display: none;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+        font-size: 14px;
+        background: rgb(10, 10, 10);
+    }
+    .hero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .container, .section, .content {
+        max-width: 100%;
+        padding: 15px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgb(10, 10, 10);
+        z-index: 999;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav ul li {
+        padding: 5px 0;
+    }
+
+    .pip {
+        display: none;
+    }
+
+    .image-hero {
+        display: none;
+    }
+
+    .logo {
+        position: static;
+        margin: 0 auto;
+    }
+
+    .hero {
+        height: auto;
+        margin-top: 70px;
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        margin: 0;
+        padding: 0 10px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+}
+
+
+/* Для телефонов  */
+@media (max-width: 768px){
+
+    .container{
+        display: none;
+    }
+
+    .logo img{
+        height: 60px;
+        width: 68px;
+        position: fixed;
+        z-index: 100;
+    }
+
+    .hero-image{
+        display: block;
+    }
+
+
+    .hero-squares {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+        
+    }
+
+    .square {
+        width: 40%;
+        height: 100px;
+        background-size: cover;
+        background-position: center;
+        
+    }
+
+    .square:first-child {
+        background-image: url(../images/per2.jpg);
+        margin-left: -100px;
+        height: 300px;
+        width: 100px;
+        margin-bottom: 100px;
+       
+    }
+
+    .faq {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        
+    }
+
+    .faq img {
+        display: none;
+    }
+
+    .faq-content {
+        width: 100%;
+    }
+
+    .faq-question {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .faq-answer {
+        font-size: 14px;
+    }
+    
+
+
+    .reviews-container {
+        padding: 20px;
+    }
+
+    .review {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .review img {
+        width: 90%;
+        height: auto;
+    }
+
+    .review-text h3 {
+        font-size: 18px;
+    }
+
+    .review-text p {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .line4 {
+        height: 2px;
+    }
+    .justimage{
+        display: none;
+    }
+    footer{
+        background-color: rgb(10,10,10);
+    }
+    .line5 {
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        margin: 10px 0;
+    }
+
+    
+
+}
+
+/* Меню Бургер */
+@media (max-width: 768px){
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background: rgb(10,10,10);
+        color: white;
+        height: 150vh;
+      }
+      
+      
+      .burger {
+        width: 30px;
+        height: 25px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+      
+      .burger span {
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: 0.4s;
+      }
+      
+      
+
+      .burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px,10px);
+      }
+      .burger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+      
+      
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+        z-index: 1000;
+      }
+      
+      .menu.open {
+        transform: translateX(0);
+      }
+      
+      .menu ul {
+        list-style: none;
+        text-align: center;
+      }
+      
+      .menu ul li {
+        margin: 20px 0;
+      }
+      
+     .h1{
+        font-size: 12rem;
+      }
+
+      .menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-size:25px;
+        transition: color 0.3s;
+      }
+      
+
+      .die{
+        display: block;
+      }
+
+      .portfolio-subtext {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 5px;
+      }
+      
+      .portfolio-subtext .ko {
+        font-size: 19px;
+        color: #aaa;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 5spx;
+      }
+      
+      
+      
+      
+}
+
+@media (min-width: 1500px) {
+    .hero-title,
+    .hero-text p {
+      text-align: center;
+      width: 600px;
+    }
+    
+    .hero-image{
+        display: block;
+    }
+
+
+
+    .hero-squares {
+      margin-left: 100px;
+    }
+  
+    .square:first-child {
+      width: 500px;
+      height: 580px;
+      background-size: 550px 750px;
+    }
+
+
+  
+    .faq {
+      max-width: 1920px;
+      gap: 100px;
+    }
+  
+    .faq img {
+      width: 45%;
+      height: 800px;
+      margin-left: -100px;
+    }
+  
+    .review img {
+      width: 320px;
+      height: 320px;
+    }
+  
+    .review-text p {
+      font-size: 18px;
+    }
+  
+    .title {
+      font-size: 52px;
+      margin-left: 600px;
+    }
+    .ty {
+      font-size: 52px;
+      margin-right: 700px;
+    }
+  
+    .quatr {
+      padding-left: 180px;
+    }
+  
+    .pip {
+      margin-left: 970px;
+    }
+  
+    .hero-content.new-hero {
+      padding: 80px;
+    }
+    .faq {
+        padding-left: 120px;
+        padding-right: 120px;
+      }
+    
+      .faq img {
+        width: 40%;
+        height: 950px;
+      }
+    
+      .faq-content {
+        width: 55%;
+      }
+
+      .pip{
+        left: 500px;
+      }
+      header.scrolled nav ul {
+        display: flex;
+        gap: 40px;
+        margin-left: -730px;
+        transition: 1s;
+    }
+    }
+
+
+/* Для больших мониторов  */
+ @media (min-width: 2500px) {
+        .hero-title,
+        .hero-text p {
+          text-align: center;
+          width: 600px;
+        }
+      
+        .hero-squares {
+          margin-left: 100px;
+        }
+      
+        .square:first-child {
+          width: 500px;
+          height: 580px;
+          background-size: 550px 750px;
+        }
+      
+    
+      
+        .hero-image{
+            display: block;
+        }
+    
+
+        .faq {
+          max-width: 1920px;
+          gap: 100px;
+        }
+      
+        .faq img {
+          width: 45%;
+          height: 800px;
+          margin-left: -100px;
+        }
+      
+        .review img {
+          width: 320px;
+          height: 320px;
+        }
+      
+        .review-text p {
+          font-size: 18px;
+        }
+      
+        .title {
+          font-size: 52px;
+          margin-left: 600px;
+        }
+        .ty {
+          font-size: 52px;
+          margin-right: 700px;
+        }
+      
+        .quatr {
+          padding-left: 180px;
+        }
+      
+        .pip {
+          margin-left: 950px;
+        }
+      
+        .hero-content.new-hero {
+          padding: 80px;
+        }
+        .faq {
+            padding-left: 120px;
+            padding-right: 120px;
+          }
+        
+          .faq img {
+            width: 40%;
+            height: 1050px;
+          }
+        
+          .faq-content {
+            width: 55%;
+          }
+    
+          .pip{
+            left: 1130px;
+          }
+          header.scrolled nav ul {
+            display: flex;
+            gap: 40px;
+            margin-left: -1030px;
+            transition: 1s;
+        }
+       
+        }
+
+
+/* ===============================
+   CLEAN LAYOUT PATCH (no margins)
+   Paste at the END of main-page.css
+================================= */
+
+:root{
+  --container: 1200px;
+  --gutter: clamp(16px, 3vw, 48px);
+}
+
+/* Универсально: не даём элементам ломать ширину */
+*{ box-sizing: border-box; }
+html, body{ overflow-x: hidden; }
+
+/* Контейнер для секций (можно использовать где надо) */
+.section-wrap{
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin: 0 auto;
+}
+
+/* -------------------------------
+   HERO (ровно, без margin-left:-100)
+-------------------------------- */
+section.hero-content{
+  padding: 0 !important;
+}
+
+.hero-wrapper{
+  width: min(var(--container), calc(100% - (var(--gutter) * 2))) !important;
+  margin: 0 auto !important;
+}
+
+.hero-content.new-hero{
+  height: 100vh;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(18px, 4vw, 64px);
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text{
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.hero-title{
+  margin: 0 0 14px 0 !important;
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 1.05;
+}
+
+.hero-text p{
+  margin: 0 0 10px 0 !important;
+  font-size: clamp(14px, 1.2vw, 18px);
+  color: rgba(255,255,255,.78);
+  max-width: 56ch;
+}
+
+.hero-squares{
+  margin: 0 !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.square:first-child{
+  margin: 0 !important;
+  width: min(440px, 100%);
+  height: clamp(360px, 55vh, 560px);
+  background-position: center;
+  background-size: cover;
+  border-radius: 6px;
+  filter: brightness(.92);
+}
+
+/* hero background media */
+.hero{
+  height: 100vh;
+}
+.image-hero,
+.hero-image{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* -------------------------------
+   GALLERY section (не ломаем)
+-------------------------------- */
+.gallery{
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+/* -------------------------------
+   TESTIMONIALS + REVIEWS (ровнее)
+-------------------------------- */
+.testimonials{
+  padding: 64px var(--gutter);
+}
+.reviews-container{
+  width: min(var(--container), 100%);
+  margin: 0 auto;
+}
+.review{
+  gap: 22px;
+  padding: 22px;
+}
+.review img{
+  width: 240px;
+  height: 240px;
+}
+
+/* -------------------------------
+   CONTACT FORM (premium + ровно)
+-------------------------------- */
+.text-contact{
+  font-size: clamp(34px, 4vw, 64px);
+  margin: 0 auto 18px !important;
+}
+
+.contact-form{
+  width: min(920px, calc(100% - (var(--gutter) * 2))) !important;
+  margin: 0 auto !important;
+  padding: 34px 28px 28px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+}
+
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 26px;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form label{
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.28);
+  padding: 12px 6px 12px 2px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  margin: 0 !important; /* важное: убираем старые margin-bottom */
+  transition: border-color .25s ease, transform .25s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  border-bottom-color: rgba(255,255,255,.55);
+  transform: translateY(-1px);
+}
+
+.contact-form textarea{
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.5;
+  padding-top: 14px;
+}
+
+.contact-form button{
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.contact-form button:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.92);
+}
+
+/* -------------------------------
+   FOOTER + social icons (без минус margin)
+-------------------------------- */
+.social-icons{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+footer{
+  margin-top: 64px;
+  padding: 30px var(--gutter) 18px;
+  max-height: none;
+}
+
+/* -------------------------------
+   MOBILE (один правильный блок)
+-------------------------------- */
+@media (max-width: 768px){
+
+  header{ display: none; } /* оставляем твою логику */
+
+  /* HERO: 1 колонка */
+  .hero-content.new-hero{
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    min-height: 100vh;
+    padding: 96px 0 40px !important;
+  }
+
+  .hero-squares{
+    justify-content: center;
+  }
+
+  .square:first-child{
+    width: 100%;
+    height: 360px;
+  }
+
+  /* Gallery скрыто у тебя — оставляем */
+  .gallery{ display: none; }
+
+  /* Reviews */
+  .review{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .review img{
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+  }
+
+  /* Form: 1 колонка */
+  .contact-form{
+    padding: 24px 16px 20px;
+  }
+  .form-grid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Убираем твой мобильный body height:150vh (он ломает прокрутку) */
+  body{ height: auto !important; }
+}
+
+
+/* ===== Zola Card (match Contact Form style) ===== */
+.zola-card{
+  display: block;
+  width: min(920px, calc(100% - 32px));
+  margin: 26px auto;
+  padding: 22px 22px;
+  text-decoration: none;
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.zola-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(0,0,0,.65);
+}
+
+.zola-card:active{
+  transform: translateY(0);
+}
+
+.zola-card-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Левый блок текста (badge + заголовки) */
+.zola-badge{
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+
+/* Заголовок */
+.zola-card h3{
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* Подзаголовок */
+.zola-card p{
+  margin: 6px 0 0;
+  font-size: 16px;
+  color: rgba(255,255,255,.75);
+}
+
+/* Делаем аккуратную “стрелку” справа (визуальный CTA без кнопки) */
+.zola-card-content::after{
+  content: "↗";
+  font-size: 18px;
+  color: rgba(255,255,255,.65);
+  margin-left: auto;
+  transition: transform .2s ease, color .2s ease;
+}
+
+.zola-card:hover .zola-card-content::after{
+  transform: translate(2px, -2px);
+  color: rgba(255,255,255,.9);
+}
+
+/* Мобайл */
+@media (max-width: 768px){
+  .zola-card{
+    padding: 18px 16px;
+    margin: 18px auto;
+  }
+
+  .zola-card-content{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .zola-card-content::after{
+    align-self: flex-end;
+  }
+}
